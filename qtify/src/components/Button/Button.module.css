@@ -6,6 +6,8 @@
   border-radius: 8px;
   border: none;
 
+  font-family: "Poppins", sans-serif;  /* ADD THIS */
   font-weight: 600;
+
   cursor: pointer;
 }

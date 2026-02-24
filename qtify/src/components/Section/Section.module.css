@@ -1,0 +1,29 @@
+.section {
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;   
+  align-items: center;
+  margin-bottom: 24px;            
+}
+
+.header h2 {
+  color: white;
+  margin: 0;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;                        
+}
