@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 import styles from "./Section.module.css";
 
-function Section({ title, endpoint, type }) {
+function Section({ title, endpoint }) {
   const [data, setData] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
@@ -13,7 +13,7 @@ function Section({ title, endpoint, type }) {
   }, [endpoint]);
 
   const renderCard = (item) => (
-    <Card key={item.id} data={item} type={type} />
+    <Card key={item.id} data={item} />
   );
 
   return (
@@ -21,21 +21,19 @@ function Section({ title, endpoint, type }) {
       <div className={styles.header}>
         <h2>{title}</h2>
 
-        {type !== "songs" && (
-          <button
-            className={styles.toggle}
-            onClick={() => setShowAll(!showAll)}
-          >
-            {showAll ? "Collapse" : "Show All"}
-          </button>
-        )}
+        <button
+          className={styles.toggle}
+          onClick={() => setShowAll(!showAll)}
+        >
+          {showAll ? "Collapse" : "Show All"}
+        </button>
       </div>
 
-      {type === "songs" || !showAll ? (
+      {showAll ? (
         <Carousel data={data} renderCard={renderCard} />
       ) : (
         <div className={styles.grid}>
-          {data.map((item) => renderCard(item))}
+          {data.map(renderCard)}
         </div>
       )}
     </div>

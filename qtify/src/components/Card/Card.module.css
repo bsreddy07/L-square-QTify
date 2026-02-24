@@ -1,33 +1,25 @@
-.card {
-  width: 159px;
-  border-radius: 10px;
-  overflow: hidden;              
-  background-color: var(--color-black);
+import Chip from "@mui/material/Chip";
+import styles from "./Card.module.css";
+
+function Card({ data, type }) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.imageWrapper}>
+        <img src={data.image} alt={data.title} />
+
+        <Chip
+          label={
+            type === "songs"
+              ? `${data.likes} Likes`
+              : `${data.follows} Follows`
+          }
+          className={styles.chip}
+        />
+      </div>
+
+      <p className={styles.title}>{data.title}</p>
+    </div>
+  );
 }
 
-.imageContainer {
-  height: 205px;                 
-}
-
-.imageContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;            
-}
-
-.bottomSection {
-  height: 74px;                 
-  padding: 8px;
-  color: white;
-}
-
-.title {
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.chip {
-  background-color: black !important;
-  color: white !important;
-  font-size: 12px !important;
-}
+export default Card;

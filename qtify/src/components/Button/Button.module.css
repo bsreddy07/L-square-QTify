@@ -1,13 +1,13 @@
 .button {
   background-color: var(--color-black);
   color: var(--color-primary);
-
-  padding: 10px 20px;
   border-radius: 8px;
-  border: none;
-
-  font-family: "Poppins", sans-serif;  /* ADD THIS */
-  font-weight: 600;
-
   cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.button {
+  font-family: 'Poppins', sans-serif;
 }

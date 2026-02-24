@@ -12,10 +12,12 @@ function Songs() {
   const [selected, setSelected] = useState("all");
 
   useEffect(() => {
-    axios.get("https://qtify-backend.labs.crio.do/songs")
+    axios
+      .get("https://qtify-backend.labs.crio.do/songs")
       .then((res) => setSongs(res.data));
 
-    axios.get("https://qtify-backend.labs.crio.do/genres")
+    axios
+      .get("https://qtify-backend.labs.crio.do/genres")
       .then((res) => setGenres(res.data.data));
   }, []);
 
@@ -31,6 +33,8 @@ function Songs() {
       <Tabs
         value={selected}
         onChange={(e, val) => setSelected(val)}
+        textColor="inherit"
+        indicatorColor="primary"
         className={styles.tabs}
       >
         <Tab label="All" value="all" />

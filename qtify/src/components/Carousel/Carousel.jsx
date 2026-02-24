@@ -1,21 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-SwiperCore.use([Navigation]);
-
 function Carousel({ data, renderCard }) {
   return (
     <Swiper
+      modules={[Navigation]}
       navigation
       spaceBetween={20}
       breakpoints={{
-        320: { slidesPerView: 2 },
-        640: { slidesPerView: 3 },
-        1024: { slidesPerView: 5 },
-        1440: { slidesPerView: 6 },
+        0: { slidesPerView: 2 },
+        768: { slidesPerView: 4 },
+        1024: { slidesPerView: 6 },
       }}
     >
       {data.map((item) => (
